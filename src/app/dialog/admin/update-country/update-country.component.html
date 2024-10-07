@@ -1,0 +1,57 @@
+<form [formGroup]="formGroup">
+  <h2 mat-dialog-title>Оновити тип туру</h2>
+  <div mat-dialog-content class="update-country-form">
+    <p>
+      <mat-form-field class="update-country-input">
+        <mat-label>Назва</mat-label>
+        <input formControlName="name" matInput>
+        <mat-error *ngIf="formGroup?.get('name').invalid">Назву не введено</mat-error>
+        <mat-icon matSuffix>dns</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="update-country-input">
+        <mat-label>Опис</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+        <mat-error *ngIf="formGroup?.get('description').invalid">Опис не введено</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="update-country-input" >
+        <mat-label>Географія</mat-label>
+        <textarea formControlName="geography" matInput></textarea>
+        <mat-error *ngIf="formGroup?.get('geography').invalid">Опис географії не введено</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="update-country-input" >
+        <mat-label>Клімат</mat-label>
+        <textarea formControlName="climate" matInput></textarea>
+        <mat-error *ngIf="formGroup?.get('climate').invalid">Опис клімату не введено</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="update-country-input" >
+        <mat-label>Кухня</mat-label>
+        <textarea formControlName="kitchen" matInput></textarea>
+        <mat-error *ngIf="formGroup?.get('kitchen').invalid">Опис кухні не введено</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="update-country-input">
+        <mat-label>Ссилка на зображення</mat-label>
+        <input formControlName="imagePath" matInput>
+        <mat-error *ngIf="formGroup?.get('imagePath').invalid">Ссилку на зображення не введено</mat-error>
+        <mat-icon matSuffix>add_photo_alternate</mat-icon>
+      </mat-form-field>
+    </p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="updateTourType()">Оновити</button>
+    <button mat-flat-button color="basic" (click)="onNoClick()">Скасувати</button>
+  </div>
+</form>

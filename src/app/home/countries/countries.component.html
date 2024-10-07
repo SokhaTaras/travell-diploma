@@ -1,0 +1,21 @@
+<div class="countries-body">
+  <mat-grid-list cols="12" rowHeight="700px">
+    <mat-grid-tile colspan="4" *ngFor="let country of countries">
+      <mat-card class="country-card">
+        <mat-card-header>
+          <mat-card-title style="cursor: pointer" routerLink="/countries/{{country.id}}">{{country.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image style="cursor: pointer; max-height: 200px;" [src]="country.imagePath" routerLink="/countries/{{country.id}}">
+        <mat-card-content>
+          <p>
+            {{country.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button style="margin-left: 8px" mat-stroked-button routerLink="/countries/{{country.id}}">Детальніше</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

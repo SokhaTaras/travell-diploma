@@ -1,0 +1,20 @@
+td, p {
+  padding: 1vw 1vh!important;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+.country-image {
+  width: 20vw; border-radius: 10px;
+}
+
+.country-table {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}

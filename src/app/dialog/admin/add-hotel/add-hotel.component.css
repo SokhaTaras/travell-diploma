@@ -1,0 +1,11 @@
+* {
+  color: black!important;
+}
+
+.add-hotel-form {
+  width: 600px;
+}
+
+.add-hotel-form mat-form-field {
+  width: 100%;
+}

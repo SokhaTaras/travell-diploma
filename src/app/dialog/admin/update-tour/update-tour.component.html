@@ -1,0 +1,74 @@
+<form [formGroup]="formGroup">
+  <h2 mat-dialog-title>Оновити тур</h2>
+  <div mat-dialog-content class="add-tour">
+    <p>
+      <mat-form-field>
+        <mat-label>Тип тупу</mat-label>
+        <mat-select formControlName="tourType" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let tourType of tourTypes" [value]="tourType">
+            {{tourType.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup?.get('tourType').invalid">Тип туру не вибраний</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Країна</mat-label>
+        <mat-select formControlName="country" required (valueChange)="findHotels($event)">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup?.get('country').invalid">Країна не вибрана</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Готель</mat-label>
+        <mat-select formControlName="hotel" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let hotel of hotels" [value]="hotel">
+            {{hotel.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup?.get('hotel').invalid">Готель не вибраний</mat-error>
+        <mat-icon matSuffix>description</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Ціна</mat-label>
+        <input formControlName="price" matInput>
+        <mat-error *ngIf="formGroup?.get('price').invalid">Ціну не введено</mat-error>
+        <mat-icon matSuffix>dns</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Дата початку</mat-label>
+        <input formControlName="tourStartDate" matInput [matDatepicker]="picker1">
+        <mat-error *ngIf="formGroup?.get('tourStartDate').invalid">Дату не вибрано</mat-error>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Дата закінчення</mat-label>
+        <input formControlName="tourStopDate" matInput [matDatepicker]="picker2">
+        <mat-error *ngIf="formGroup?.get('tourStopDate').invalid">Дату не вибрано</mat-error>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="updateTour()">Оновити</button>
+    <button mat-flat-button color="basic" (click)="onNoClick()">Скасувати</button>
+  </div>
+</form>

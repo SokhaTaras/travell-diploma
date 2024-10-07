@@ -1,0 +1,13 @@
+* {
+  color: black!important;
+}
+
+.add-country-form {
+  height: 600px;
+  width: 600px;
+}
+
+.add-country-input {
+  width:100%;
+}
+

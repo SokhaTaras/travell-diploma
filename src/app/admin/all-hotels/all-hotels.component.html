@@ -1,0 +1,36 @@
+<table class="hotel-table" mat-table [dataSource]="hotels">
+  <ng-container matColumnDef="id">
+    <th style="display: none;" mat-header-cell *matHeaderCellDef> No. </th>
+    <td style="display: none;" mat-cell *matCellDef="let element"> <p>{{element?.id}}</p> </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef><p> Name</p> </th>
+    <td mat-cell *matCellDef="let element"><p class="name"> {{element?.name}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef><p> Country</p> </th>
+    <td mat-cell *matCellDef="let element"><p class="description"> {{element?.country.name}}</p> </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> <p>Address</p> </th>
+    <td mat-cell *matCellDef="let element"> <p class="description">{{element?.address}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="update">
+    <th mat-header-cell *matHeaderCellDef><p>Update</p></th>
+    <td mat-cell *matCellDef="let element"><button mat-flat-button color="primary" style="position: relative" (click)="openUpdateHotelDialog(element)"><mat-icon>update</mat-icon></button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef><p>Delete</p></th>
+    <td mat-cell *matCellDef="let element"><button mat-flat-button color="warn" style="position: relative" (click)="deleteHotel(element)"><mat-icon>clear</mat-icon></button></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

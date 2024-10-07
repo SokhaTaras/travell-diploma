@@ -1,0 +1,52 @@
+.our-contacts-name {
+  color: azure;
+  font-family: Futura, sans-serif;
+  font-size: 3em;
+}
+
+.content {
+  width: 100vw;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.info {
+  padding-top: 18vh;
+  text-align: center;
+}
+
+.info-title {
+  color: azure;
+  font-size: 56px;
+  line-height: 1;
+  text-align: center;
+}
+
+.info-description {
+  color: #cad4d4;
+  font-size: 20px;
+}
+
+.info-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: azure;
+}
+
+.info-title-description {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: azure;
+}
+
+.about-us-column {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  width: 100%;
+  background-size: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -ms-overflow-style: none;
+}

@@ -1,0 +1,21 @@
+<div class="tour-types-body">
+  <mat-grid-list cols="12" rowHeight="800px">
+    <mat-grid-tile colspan="4" *ngFor="let tourType of tourTypes">
+      <mat-card class="tour-card">
+        <mat-card-header>
+          <mat-card-title style="cursor: pointer" routerLink="/tour-types/{{tourType.id}}">{{tourType.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image style="cursor: pointer" [src]="tourType.imagePath" routerLink="/tour-types/{{tourType.id}}">
+        <mat-card-content>
+          <p>
+            {{tourType.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button style="margin-left: 8px" mat-stroked-button routerLink="/tour-types/{{tourType.id}}">Детальніше</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

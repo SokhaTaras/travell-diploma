@@ -1,0 +1,24 @@
+<div class="toolbar" role="banner">
+  <div>
+    <img width="40" style="cursor: pointer" class="travellab-ico" alt="Travellab" src="../../assets/travellab-ico.png"
+         routerLink="/"/>
+  </div>
+  <span class="travellab-name" style="cursor: pointer" routerLink="/">Travellab</span>
+  <a style="margin-left: 60vw" mat-button routerLink="/search-tours">Пошук турів</a>
+  <a mat-button routerLink="/tour-types">Типи турів</a>
+  <a mat-button routerLink="/countries">Країни</a>
+  <a mat-button (click)="scrollToContacts()">Контакти</a>
+  <a *ngIf="!username" mat-button routerLink="/sign-in">Вхід</a>
+  <a *ngIf="username" mat-button>{{username}}</a>
+</div>
+<div class="main-body">
+  <router-outlet></router-outlet>
+  <div class="footer">
+    <mat-grid-list cols="4" rowHeight="200px">
+      <mat-grid-tile colspan="1"><span style="font-weight: bold; font-size: 24px; color: azure;">© 2020 Travellab</span></mat-grid-tile>
+      <mat-grid-tile colspan="1"></mat-grid-tile>
+      <mat-grid-tile colspan="2"></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+* {
+  color: black!important;
+}
+
+.add-tour-form {
+  width: 600px;
+}
+
+.add-tour-form mat-form-field {
+  width: 100%;
+}

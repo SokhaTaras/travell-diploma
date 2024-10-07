@@ -1,0 +1,116 @@
+.main-body {
+  height: 100vh;
+  /*background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);*/
+  background-image: url("../../assets/background4.jpg");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+.main-body::-webkit-scrollbar {
+  display: none;
+}
+
+.main-body::before{
+  background-color: rgba(0, 0, 0, 0.5);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.toolbar {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.6);
+  content: '';
+  -webkit-box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
+  -moz-box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
+  box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
+}
+
+.footer {
+  height: 100px;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-contacts-name {
+  color: azure;
+  font-family: Futura, sans-serif;
+  font-size: 3em;
+}
+
+.content {
+  width: 100vw;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.travellab-ico {
+  padding-left: 5vw;
+}
+
+.travellab-name {
+  font-family: Futura, sans-serif;
+  font-size: 1.2em;
+}
+
+.travellab-name::before {
+  color: #d6e3e3;
+}
+
+.info {
+  padding-top: 18vh;
+  text-align: center;
+}
+
+.info-title {
+  color: azure;
+  font-size: 56px;
+  line-height: 1;
+  text-align: center;
+}
+
+.info-description {
+  color: #cad4d4;
+  font-size: 20px;
+}
+
+.info-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: azure;
+}
+
+.info-title-description {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: azure;
+}
+
+.about-us-column {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  width: 100%;
+  background-size: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -ms-overflow-style: none;
+}

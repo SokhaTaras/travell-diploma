@@ -1,0 +1,59 @@
+<!--<div class="toolbar" role="banner">-->
+<!--  <div style="align-content: center">-->
+<!--    <img width="40" class="travellab-ico" alt="Travellab" src="../../assets/travellab-ico.png"/>-->
+<!--    <span class="travellab-name">Travellab</span>-->
+<!--  </div>-->
+<!--</div>-->
+<mat-drawer-container class="admin-menu-container" autosize>
+
+  <mat-drawer position="end" #drawer class="admin-menu-sidenav" mode="over">
+    <div class="admin-function-list">
+      <mat-list>
+        <mat-list-item>
+          <button mat-flat-button color="primary" (click)="openAddTourTypeDialog()">Додати тип туру</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" routerLink="/admin/all-tours">Список типів турів</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" (click)="openAddCountryDialog()">Додати країну</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" routerLink="/admin/all-countries">Список країн</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" (click)="openAddHotelDialog()">Додати готель</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" routerLink="/admin/all-hotels">Список готелів</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" (click)="openAddTourDataDialog()">Додати дані туру</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="primary" routerLink="/admin/all-tours-detailed-data">Список турів</button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-drawer>
+
+  <div class="admin-menu">
+    <mat-toolbar class="admin-header">
+      <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon" routerLink="/">
+        <mat-icon>home</mat-icon>
+      </button>
+      <div>
+        <img width="40" class="travellab-ico" style="cursor: pointer" alt="Travellab" src="../../assets/travellab-ico.png"  routerLink="/admin/all-tours"/>
+      </div>
+      <span class="travellab-name" style="cursor: pointer" routerLink="/admin/all-tours">Travellab</span>
+      <button class="admin-menu-button" type="button" mat-mini-fab color="primary" (click)="drawer.toggle()">
+        <mat-icon color="primary">list</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="main-admin-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</mat-drawer-container>
+

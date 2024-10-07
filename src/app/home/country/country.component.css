@@ -1,0 +1,28 @@
+
+.country-image {
+  border-radius: 2px;
+  max-height: 250px;
+  width: 100%;
+}
+
+.countries-body {
+  padding: 6%;
+  max-width: 100vw;
+  border-radius: 4px;
+}
+
+.countries-body p {
+  color: white;
+  background-color: rgba(161, 161, 161, 0.03);
+}
+
+
+.country-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.image-container {
+  align-items: center;
+  justify-content: center;
+}

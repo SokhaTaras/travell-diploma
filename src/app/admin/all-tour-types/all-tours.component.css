@@ -1,0 +1,20 @@
+td, p {
+  padding: 2vw 1vh!important;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+.tour-type-image {
+  width: 20vw; border-radius: 10px;
+}
+
+.tour-type-table {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}

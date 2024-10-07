@@ -1,0 +1,12 @@
+* {
+  color: black!important;
+}
+
+.update-country-form {
+  height: 600px;
+  width: 600px;
+}
+
+.update-country-input {
+  width:100%;
+}

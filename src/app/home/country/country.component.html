@@ -1,0 +1,41 @@
+<div class="countries-body">
+  <mat-grid-list cols="32" rowHeight="70px">
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile class="image-container" colspan="10" rowspan="6">
+      <img mat-card-image class="country-image" [src]="country?.imagePath">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2"></mat-grid-tile>
+    <mat-grid-tile colspan="19" rowspan="6">
+      <p>
+        <span class="country-title">{{country?.name}}</span>
+        <br>
+        <br>
+        {{country?.description}}
+      </p>
+    </mat-grid-tile>
+      <mat-grid-tile colspan="32" rowspan="3">
+      <p>
+        <span class="country-title">Географія</span>
+        <br>
+        <br>
+        {{country?.geography}}
+      </p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="32" rowspan="3">
+      <p>
+        <span class="country-title">Клімат</span>
+        <br>
+        <br>
+        {{country?.climate}}
+      </p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="32" rowspan="3">
+      <p>
+        <span class="country-title">Кухня</span>
+        <br>
+        <br>
+        {{country?.kitchen}}
+      </p>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

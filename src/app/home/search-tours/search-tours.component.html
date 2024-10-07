@@ -1,0 +1,107 @@
+<div class="main-block">
+  <div class="search-form">
+    <mat-card>
+      <mat-card-title>Пошук</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="formGroup" (ngSubmit)="search()">
+          <p>
+            <mat-form-field>
+              <mat-label>Тип тупу</mat-label>
+              <mat-select formControlName="tourType">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tourType of tourTypes" [value]="tourType">
+                  {{tourType.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="formGroup?.get('tourType').invalid">Тип туру не вибраний</mat-error>
+              <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Країна</mat-label>
+              <mat-select formControlName="country">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let country of countries" [value]="country">
+                  {{country.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="formGroup?.get('country').invalid">Країна не вибрана</mat-error>
+              <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Мінімальна ціна</mat-label>
+              <input formControlName="minPrice" matInput>
+              <mat-error *ngIf="formGroup?.get('minPrice').invalid">Ціну не введено</mat-error>
+              <mat-icon matSuffix>dns</mat-icon>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Максимальна ціна</mat-label>
+              <input formControlName="maxPrice" matInput>
+              <mat-error *ngIf="formGroup?.get('maxPrice').invalid">Ціну не введено</mat-error>
+              <mat-icon matSuffix>dns</mat-icon>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Дата початку</mat-label>
+              <input formControlName="tourStartDate" matInput [matDatepicker]="picker1" required>
+              <mat-error *ngIf="formGroup?.get('tourStartDate').invalid">Дату не вибрано</mat-error>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Дата закінчення</mat-label>
+              <input formControlName="tourStopDate" matInput [matDatepicker]="picker2" required>
+              <mat-error *ngIf="formGroup?.get('tourStopDate').invalid">Дату не вибрано</mat-error>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </p>
+          <div class="button">
+            <button mat-stroked-button color="primary" mat-button>Пошук</button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="tours" class="search-result">
+    <mat-grid-list cols="12" rowHeight="50px" *ngFor="let tour of tours">
+      <mat-grid-tile colspan="5" rowspan="8">
+        <img mat-card-image style="max-height: 380px; max-width: 500px; border-radius:8px" [src]="tour.tourType.imagePath">
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Назва туру: {{tour.tourType.name}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Країна: {{tour.country.name}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Готе: {{tour.hotel.name}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Ціна: {{tour.price}} грн
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Дата старту: {{tour.tourStartDate}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+        Дата закінчення: {{tour.tourStopDate}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="7">
+      <button style="margin-left: 8px" mat-raised-button>Замовити</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <hr>
+  </div>
+</div>

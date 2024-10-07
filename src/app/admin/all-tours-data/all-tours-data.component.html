@@ -1,0 +1,50 @@
+<table class="tour-type-table" mat-table [dataSource]="tours">
+  <ng-container matColumnDef="id">
+    <th style="display: none;" mat-header-cell *matHeaderCellDef> No. </th>
+    <td style="display: none;" mat-cell *matCellDef="let element"> <p>{{element?.id}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tourType">
+    <th mat-header-cell *matHeaderCellDef><p> Tour type</p> </th>
+    <td mat-cell *matCellDef="let element"><p class="name"> {{element?.tourType.name}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef><p> Country</p> </th>
+    <td mat-cell *matCellDef="let element"><p class="name"> {{element?.country.name}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hotel">
+    <th mat-header-cell *matHeaderCellDef> <p>Hotel</p> </th>
+    <td mat-cell *matCellDef="let element"> <p class="description">{{element?.hotel.name}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> <p>Price</p> </th>
+    <td mat-cell *matCellDef="let element"> <p class="description">{{element?.price}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tourStartDate">
+    <th mat-header-cell *matHeaderCellDef> <p>Tour start date</p> </th>
+    <td mat-cell *matCellDef="let element"> <p class="description">{{element?.tourStartDate}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tourStopDate">
+    <th mat-header-cell *matHeaderCellDef> <p>Tour stop date</p> </th>
+    <td mat-cell *matCellDef="let element"> <p class="description">{{element?.tourStopDate}}</p> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="update">
+    <th mat-header-cell *matHeaderCellDef><p>Update</p></th>
+    <td mat-cell *matCellDef="let element"><button mat-flat-button color="primary" style="position: relative" (click)="openUpdateTourDialog(element)"><mat-icon>update</mat-icon></button></td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef><p>Delete</p></th>
+    <td mat-cell *matCellDef="let element"><button mat-flat-button color="warn" style="position: relative" (click)="deleteTour(element)"><mat-icon>clear</mat-icon></button></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

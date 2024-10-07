@@ -1,0 +1,18 @@
+.countries-body {
+  margin-top: 5%;
+}
+
+.country-card {
+  color: azure;
+  background-color: rgba(0, 0, 0, 0.65);
+  max-width: 400px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 14px;
+  height: 213px;
+  overflow: hidden;
+}
+

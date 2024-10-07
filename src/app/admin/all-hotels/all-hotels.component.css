@@ -1,0 +1,17 @@
+td, p {
+  padding: 2vw 1vh!important;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+.hotel-table {
+  width: 100%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
