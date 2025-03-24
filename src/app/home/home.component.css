@@ -8,13 +8,16 @@
   background-attachment: fixed;
   overflow-y: scroll;
   -ms-overflow-style: none;
+  position: relative; /* Ensures footer stays inside main-body */
+  min-height: 100vh; /* Ensures the main body covers the whole screen */
+  padding-bottom: 24px; /* Prevents content from overlapping footer */
 }
 
 .main-body::-webkit-scrollbar {
   display: none;
 }
 
-.main-body::before{
+.main-body::before {
   background-color: rgba(0, 0, 0, 0.5);
   content: '';
   display: block;
@@ -23,8 +26,13 @@
   width: 100%;
 }
 
+
+::ng-deep .mat-button-ripple-round {
+  display: none;
+}
+
 .toolbar {
-  z-index: 10000;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -37,16 +45,37 @@
   font-weight: 600;
   background-color: rgba(0, 0, 0, 0.6);
   content: '';
-  -webkit-box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
-  -moz-box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
-  box-shadow: 0px 11px 45px 0px rgba(0,0,0,0.41);
+  -webkit-box-shadow: 0px 11px 45px 0px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 11px 45px 0px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 11px 45px 0px rgba(0, 0, 0, 0.41);
 }
 
 .footer {
-  height: 100px;
+  height: 24px;
+  display: flex;
   width: 100vw;
   align-items: center;
   justify-content: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.main-body {
+
+}
+
+.grid-list {
+  width: 400px !important;
 }
 
 .our-contacts-name {

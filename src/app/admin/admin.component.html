@@ -4,34 +4,35 @@
 <!--    <span class="travellab-name">Travellab</span>-->
 <!--  </div>-->
 <!--</div>-->
-<mat-drawer-container class="admin-menu-container" autosize>
+<mat-drawer-container autosize class="admin-menu-container">
 
-  <mat-drawer position="end" #drawer class="admin-menu-sidenav" mode="over">
+  <mat-drawer #drawer class="admin-menu-sidenav" mode="over" position="end">
     <div class="admin-function-list">
       <mat-list>
         <mat-list-item>
-          <button mat-flat-button color="primary" (click)="openAddTourTypeDialog()">Додати тип туру</button>
+          <button (click)="openAddTourTypeDialog()" color="primary" mat-flat-button>Додати тип туру</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" routerLink="/admin/all-tours">Список типів турів</button>
+          <button (click)="openAddCountryDialog()" color="primary" mat-flat-button>Додати країну</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" (click)="openAddCountryDialog()">Додати країну</button>
+          <button (click)="openAddHotelDialog()" color="primary" mat-flat-button>Додати готель</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" routerLink="/admin/all-countries">Список країн</button>
+          <button (click)="openAddTourDataDialog()" color="primary" mat-flat-button>Додати дані туру</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" (click)="openAddHotelDialog()">Додати готель</button>
+          <button color="primary" mat-flat-button routerLink="/admin/all-tours">Список типів турів</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" routerLink="/admin/all-hotels">Список готелів</button>
+          <button color="primary" mat-flat-button routerLink="/admin/all-countries">Список країн</button>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button color="primary" mat-flat-button routerLink="/admin/all-hotels">Список готелів</button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-flat-button color="primary" (click)="openAddTourDataDialog()">Додати дані туру</button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-flat-button color="primary" routerLink="/admin/all-tours-detailed-data">Список турів</button>
+          <button color="primary" mat-flat-button routerLink="/admin/all-tours-detailed-data">Список турів</button>
         </mat-list-item>
       </mat-list>
     </div>
@@ -39,14 +40,15 @@
 
   <div class="admin-menu">
     <mat-toolbar class="admin-header">
-      <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon" routerLink="/">
+      <button aria-label="Example icon button with a home icon" color="primary" mat-mini-fab routerLink="/">
         <mat-icon>home</mat-icon>
       </button>
       <div>
-        <img width="40" class="travellab-ico" style="cursor: pointer" alt="Travellab" src="../../assets/travellab-ico.png"  routerLink="/admin/all-tours"/>
+        <img alt="Travellab" class="travellab-ico" routerLink="/admin/all-tours" src="../../assets/travellab-ico.png"
+             style="cursor: pointer" width="40" />
       </div>
-      <span class="travellab-name" style="cursor: pointer" routerLink="/admin/all-tours">Travellab</span>
-      <button class="admin-menu-button" type="button" mat-mini-fab color="primary" (click)="drawer.toggle()">
+      <span class="travellab-name" routerLink="/admin/all-tours" style="cursor: pointer">Travellab</span>
+      <button (click)="drawer.toggle()" class="admin-menu-button" color="primary" mat-mini-fab type="button">
         <mat-icon color="primary">list</mat-icon>
       </button>
     </mat-toolbar>

@@ -1,10 +1,10 @@
 .sign-in-form {
-  margin-top: 10%;
+  /*height: calc(100vh - 10%);*/
 }
 
 mat-card {
   /*color: azure;*/
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.69);
   max-width: 400px;
   border-radius: 4px;
   margin-bottom: 30px;
@@ -19,7 +19,8 @@ p {
 :host {
   display: flex;
   justify-content: center;
-  margin: 100px 0px;
+  align-items: center;
+  height: 100vh;
 }
 
 .mat-form-field {
